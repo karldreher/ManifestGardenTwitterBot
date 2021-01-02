@@ -1,0 +1,7 @@
+services:
+version: '3'
+services:
+  app:
+    build: .
+    volumes:
+      - ${userprofile}\AppData\LocalLow\William Chyr Studio\Manifold Garden\Pictures:/app/images
