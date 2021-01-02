@@ -52,7 +52,7 @@ function tweetRandomImage(){
 
           T.post( 'statuses/update', {
             media_ids: new Array( data.media_id_string ),
-            status: ["#manifoldgarden"]
+            status: ["#manifoldgarden #gaming"]
           },
             function( err, data, response) {
               if (err){
@@ -83,4 +83,4 @@ function tweetRandomImage(){
 
 setInterval( function(){
   tweetRandomImage();
-}, 10000 );
+}, 100000 );
