@@ -52,7 +52,7 @@ function tweetRandomImage(){
 
           T.post( 'statuses/update', {
             media_ids: new Array( data.media_id_string ),
-            hashtags: ["#manifoldgarden"]
+            status: ["#manifoldgarden"]
           },
             function( err, data, response) {
               if (err){
