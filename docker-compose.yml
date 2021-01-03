@@ -5,3 +5,4 @@ services:
     build: .
     volumes:
       - ${userprofile}\AppData\LocalLow\William Chyr Studio\Manifold Garden\Pictures:/app/images
+    restart: always
