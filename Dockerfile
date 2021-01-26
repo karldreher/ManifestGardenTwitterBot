@@ -4,5 +4,5 @@ WORKDIR /app
 COPY config.js .
 COPY random-image-tweet.js .
 
-RUN npm install twit --save
+RUN npm install twit extfs --save
 CMD ["node", "random-image-tweet.js"]
