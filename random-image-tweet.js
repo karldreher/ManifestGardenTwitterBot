@@ -10,6 +10,7 @@ const fs = require('fs'),
   config = require(path.join(__dirname, 'config.js'));
 
 const T = new Twit(config);
+var logcounter = 1
 
 function randomFromArray(images) {
   /* Helper function for picking a random item from an array. */
@@ -84,9 +85,16 @@ function tweetRandomImage() {
 setInterval(function () {
 
 
-  if (extfs.isEmptySync(path.join(__dirname, '/images/'))){
-    console.log("Directory empty, nothing to do.  Trying again in 10 seconds.")
+  if (extfs.isEmptySync(path.join(__dirname, '/images/'))) {
+    if (logcounter < 4){
+      console.log("Directory empty, nothing to do.  Trying again in 10 seconds.")
+    } else if (logcounter == 4) {
+      console.log("Continuing to watch for new images.  Suppressing log output until next event.")
+    }
+
   } else {
-  tweetRandomImage();
-}
+    tweetRandomImage();
+    logcounter = 1
+  }
+  logcounter += 1
 }, 10000);
